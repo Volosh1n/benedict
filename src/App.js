@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import wordsData from './words.json';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -30,11 +31,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
+        <img src="https://i.imgur.com/npYk9CA.png" alt="Benedict" />
+        <h1>Forgot his name?</h1>
         <p>{ this.state.currentName }</p>
-        <button onClick={ this.handleClick }>
+        <br />
+        <a href={null} className="button" onClick={ this.handleClick }>
           What is his name again?
-        </button>
+        </a>
       </div>
     );
   }
