@@ -9,19 +9,25 @@ class App extends Component {
       currentName: 'Benedict Cumberbatch'
     };
     this.handleClick = this.handleClick.bind(this);
+    this.randomize = this.randomize.bind(this);
+  }
+
+  randomize(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
   }
 
   handleClick(e) {
-    var givenPart1 = this.state.words.givenPart1;
-    var givenPart2 = this.state.words.givenPart2;
-    var surnamePart1 = this.state.words.surnamePart1;
-    var surnamePart2 = this.state.words.surnamePart2;
-    var name = givenPart1[Math.floor(Math.random() * givenPart1.length)] +
-               givenPart2[Math.floor(Math.random() * givenPart2.length)];
-    var surname = surnamePart1[Math.floor(Math.random() * surnamePart1.length)] +
-                  surnamePart2[Math.floor(Math.random() * surnamePart2.length)];
+    var data = {
+      givenPart1: this.state.words.givenPart1,
+      givenPart2: this.state.words.givenPart2,
+      surnamePart1: this.state.words.surnamePart1,
+      surnamePart2: this.state.words.surnamePart2
+    }
+    var name = this.randomize(data.givenPart1) + this.randomize(data.givenPart2);
+    var surname = this.randomize(data.surnamePart1) + this.randomize(data.surnamePart2);
     this.setState({currentName: `${name} ${surname}`});
   }
+
   render() {
     return (
       <div>
