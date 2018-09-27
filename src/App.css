@@ -4,6 +4,10 @@ html, body {
   background-color: #fafafa;
 }
 
+* {
+    transition: all .3s ease-in;
+}
+
 .App {
   text-align: center;
   position: absolute;

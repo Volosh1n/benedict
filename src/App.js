@@ -9,7 +9,7 @@ class App extends Component {
       words: wordsData,
       currentName: 'Benedict Cumberbatch'
     };
-    this.handleClick = this.handleClick.bind(this);
+    this.checkName = this.checkName.bind(this);
     this.randomize = this.randomize.bind(this);
   }
 
@@ -17,7 +17,8 @@ class App extends Component {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  handleClick(e) {
+  checkName(e) {
+    document.getElementsByTagName('p')[0].style.opacity = '0';
     var data = {
       givenPart1: this.state.words.givenPart1,
       givenPart2: this.state.words.givenPart2,
@@ -26,7 +27,18 @@ class App extends Component {
     }
     var name = this.randomize(data.givenPart1) + this.randomize(data.givenPart2);
     var surname = this.randomize(data.surnamePart1) + this.randomize(data.surnamePart2);
-    this.setState({currentName: `${name} ${surname}`});
+    setTimeout(
+      function() {
+          this.setState({currentName: `${name} ${surname}`});
+      }
+      .bind(this),
+      300
+    );
+    setTimeout(
+      function() {
+          document.getElementsByTagName('p')[0].style.opacity = '1';
+      }, 300
+    );
   }
 
   render() {
@@ -36,7 +48,7 @@ class App extends Component {
         <h1>Forgot his name?</h1>
         <p>{ this.state.currentName }</p>
         <br />
-        <a href={null} className="button" onClick={ this.handleClick }>
+        <a href={null} className="button" onClick={ this.checkName }>
           What is his name again?
         </a>
       </div>
