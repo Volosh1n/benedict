@@ -13,8 +13,8 @@ class App extends Component {
     this.randomize = this.randomize.bind(this);
   }
 
-  randomize(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+  randomize(array) {
+    return array[Math.floor(Math.random() * array.length)];
   }
 
   checkName(e) {

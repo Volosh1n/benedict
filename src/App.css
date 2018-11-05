@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 html, body {
   margin: 0;
   height: 100%;
@@ -5,7 +7,11 @@ html, body {
 }
 
 * {
-    transition: all .3s ease-in;
+    transition: all .3s linear;
+}
+
+h1, p, a {
+  font-family: 'Raleway', sans-serif;
 }
 
 .App {
@@ -24,7 +30,6 @@ img {
 }
 
 h1 {
-  font-family: 'Ubuntu', sans-serif;
   font-size: 2em;
   font-style: normal;
   font-variant: normal;
@@ -34,7 +39,6 @@ h1 {
 }
 
 p {
-  font-family: 'Ubuntu', sans-serif;
   font-size: 8vw;
   font-style: normal;
   font-variant: normal;
@@ -44,20 +48,18 @@ p {
 
 a {
   user-select: none;
-  font-family: 'Ubuntu', sans-serif;
 }
 
 .button {
   background-color: #d9d9d9;
-  -moz-border-radius: 28px;
-  -webkit-border-radius: 28px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
-  border: 1px solid #fff;
   display: inline-block;
   cursor: pointer;
   color: #000;
   font-size: 1.5em;
-  padding: 3% 3%;
+  padding: 12px 24px;
   text-decoration: none;
   max-width: 200px;
   max-height: 70px;
